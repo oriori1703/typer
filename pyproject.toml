@@ -167,6 +167,8 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
+# Runtime modules opt into PEP 810 uniformly, even for imports used during setup.
+"typer/**/*.py" = ["TID255"]
 # "__init__.py" = ["F401"]
 # rich_utils is allowed to use rich imports
 "typer/rich_utils.py" = ["TID251"]
